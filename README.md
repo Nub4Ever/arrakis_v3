@@ -1,3 +1,9 @@
+## Potentially useful links:
+[link](https://www.appsdeveloperblog.com/many-to-many-relationship-in-spring-boot-rest-jpa/)
+
+
+
+
 # arrakis_v3
 # Dogs APIs
 
