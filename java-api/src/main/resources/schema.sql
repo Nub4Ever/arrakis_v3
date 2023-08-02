@@ -9,8 +9,7 @@ CREATE TABLE book(
     id int NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
     PRIMARY KEY (id)
-)
-AS SELECT book_name from CSVREAD('C:/Users/Admin/Desktop/challenge/arrakis_v3/java-api/src/main/resources/db-bonds-data.csv');
+);
 
 CREATE TABLE users(
     id int NOT NULL AUTO_INCREMENT,
