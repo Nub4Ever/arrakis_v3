@@ -1,14 +1,8 @@
 INSERT INTO security (coupon, currency, cusip, face_value, isin, issuer_name, maturity_date, status, type)
-SELECT DISTINCT v.coupon, v.currency, v.cusip, v.face_value, v.isin, v.issuer_name, v.maturity_date, v.status, v.type
 VALUES
     (4.37, 'USD', '', 1000, 'XS1988387210', 'BNPParibasIssu 4,37% Microsoft Corp (USD)', '2021-08-05 00:00:00', 'active', 'CORP'),
-    (4.37, 'USD', '', 1000, 'XS1988387210', 'BNPParibasIssu 4,37% Microsoft Corp (USD)', '2021-08-05 00:00:00', 'active', 'CORP'),
-    (3.15, 'USD', '123456780', 900, 'USN0280EAR64', 'Airbus 3.15% USD', '2021-07-30 00:00:00', 'active', 'CORP'),
     (3.15, 'USD', '123456780', 900, 'USN0280EAR64', 'Airbus 3.15% USD', '2021-07-30 00:00:00', 'active', 'CORP'),
     (2, 'USD', '123456bh0', 900, 'A12356111', 'UBS Facebook (USD)', '2021-09-30 00:00:00', 'active', 'CORP'),
-    (3.15, 'USD', '123456780', 900, 'USN0280EAR64', 'Airbus 3.15% USD', '2021-07-30 00:00:00', 'active', 'CORP'),
-    (2, 'USD', '123456bh0', 900, 'A12356111', 'UBS Facebook (USD)', '2021-09-30 00:00:00', 'active', 'CORP'),
-    (3.15, 'USD', 'AMZN 3.15 08/22/27 REGS', 900, 'USU02320AG12', 'Amazon', '2021-03-08 00:00:00', 'active', 'CORP'),
     (3.15, 'USD', 'AMZN 3.15 08/22/27 REGS', 900, 'USU02320AG12', 'Amazon', '2021-03-08 00:00:00', 'active', 'CORP'),
     (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460505', 'HM Treasury United Kingdom', '2021-09-08 00:00:00', 'active', 'GOVN'),
     (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460506', 'HM Treasury United Kingdom', '2021-09-08 00:00:00', 'active', 'GOVN'),
@@ -22,16 +16,7 @@ VALUES
     (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460514', 'HM Treasury United Kingdom', '2021-09-08 00:00:00', 'active', 'GOVN'),
     (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460515', 'HM Treasury United Kingdom', '2021-09-08 00:00:00', 'active', 'GOVN'),
     (2.02, 'USD', '87973RAA8', 690, 'US87973RAA86', 'TEMASEK FINL I LTD GLOBAL MEDIUM TERM NTS BOOK ENTRY REG S', '2021-06-08 00:00:00', 'active', 'SOVN'),
-    (2.02, 'USD', '87973RAA8', 690, 'US87973RAA86', 'TEMASEK FINL I LTD GLOBAL MEDIUM TERM NTS BOOK ENTRY REG S', '2021-06-08 00:00:00', 'active', 'SOVN'),
-    (2.02, 'USD', '87973RAA8', 690, 'US87973RAA86', 'TEMASEK FINL I LTD GLOBAL MEDIUM TERM NTS BOOK ENTRY REG S', '2021-06-08 00:00:00', 'active', 'SOVN'),
-    (2.02, 'USD', '87973RAA8', 690, 'US87973RAA86', 'TEMASEK FINL I LTD GLOBAL MEDIUM TERM NTS BOOK ENTRY REG S', '2021-06-08 00:00:00', 'active', 'SOVN'),
-    (1.123, 'USD', '87973RAA8', 340, 'IE00B29LNP31', 'First Norway Alpha Kl.IV', '2030-12-22 00:00:00', 'active', 'SOVN'),
-    (1.123, 'USD', '87973RAA8', 340, 'IE00B29LNP31', 'First Norway Alpha Kl.IV', '2030-12-22 00:00:00', 'active', 'SOVN'),
-    (1.123, 'USD', '87973RAA8', 340, 'IE00B29LNP31', 'First Norway Alpha Kl.IV', '2030-12-22 00:00:00', 'active', 'SOVN'),
-    (1.123, 'USD', '87973RAA8', 340, 'IE00B29LNP31', 'First Norway Alpha Kl.IV', '2030-12-22 00:00:00', 'active', 'SOVN')
-)AS v
- LEFT JOIN security s ON v.coupon = s.coupon AND v.currency = s.currency AND v.cusip = s.cusip AND v.face_value = s.face_value AND v.isin = s.isin AND v.issuer_name = s.issuer_name AND v.maturity_date = s.maturity_date AND v.status = s.status AND v.type = s.type
- WHERE s.coupon IS NULL;
+    (1.123, 'USD', '87973RAA8', 340, 'IE00B29LNP31', 'First Norway Alpha Kl.IV', '2030-12-22 00:00:00', 'active', 'SOVN');
 
 INSERT INTO book (name)
 VALUES
