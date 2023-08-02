@@ -1,3 +1,6 @@
+[link](https://stackoverflow.com/questions/38041863/import-csv-in-h2-dynamically)
+
+
 ## Potentially useful links:
 [many-to-many rel. in springboot rest jpa](https://www.appsdeveloperblog.com/many-to-many-relationship-in-spring-boot-rest-jpa/)
 
