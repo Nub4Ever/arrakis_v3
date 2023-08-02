@@ -1,5 +1,5 @@
 ## Potentially useful links:
-[link](https://www.appsdeveloperblog.com/many-to-many-relationship-in-spring-boot-rest-jpa/)
+[many-to-many rel. in springboot rest jpa](https://www.appsdeveloperblog.com/many-to-many-relationship-in-spring-boot-rest-jpa/)
 
 
 
