@@ -4,7 +4,7 @@ import "../App.css";
 
 const MaturityAnalysis = () => {
   return (
-    <div>
+    <div className='background-image'>
         <Sidebar />
     </div>
   )

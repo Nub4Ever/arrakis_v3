@@ -7,6 +7,7 @@ function Sidebar() {
   return (
 
     <div className='Sidebar'>
+        <div className = "SidebarList"> 
         <ul className = "SidebarList">
         {SidebarObj.map((val,key) => {
             return (
@@ -24,7 +25,8 @@ function Sidebar() {
                 </li>
             );
         })};
-        </ul>
+        </ul></div>
+       
         </div>
   );
 }

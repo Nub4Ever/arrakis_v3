@@ -4,7 +4,7 @@ import "../App.css";
 
 const MyPortfolio = () => {
   return (
-    <div>
+    <div className='background-image'>
         <Sidebar />
     </div>
   )

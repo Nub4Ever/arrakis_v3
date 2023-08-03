@@ -26,7 +26,8 @@ function SignIn() {
     }
 
     return (
-        <div className="background-image"> 
+        <div className ="App">  
+         <div className="background-image"> 
          <div className='signIn'>
             <h1>Sign in to your account</h1>
             <input type='text' placeholder='Enter your email' value={email} onChange={e => setEmail(e.currentTarget.value)} />
@@ -35,6 +36,8 @@ function SignIn() {
             {loginError && <p className="error-message">{loginError}</p>}
          </div>
          </div>
+         </div>
+     
       
                 
     )
