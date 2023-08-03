@@ -1,7 +1,7 @@
 import React,{ useState }from 'react';
 import Sidebar from '../components/Sidebar';
 import "../App.css";
-import { m_data } from '../data/Mock_data';
+// import { m_data } from '../data/Mock_data';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +9,24 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TableForm = () => {
+
+  const [bonds,setBonds] = useState([]);
+
+  useEffect(()=>{
+        getBondsFromAPI();}, 
+        []
+);
+
+    const getBondsFromAPI = ()=>{
+      getAllSecurities()
+      .then(res => {
+          setBonds(res.data);
+      })
+      .catch(err => {
+          setBonds([]);
+          console.log(err);
+      })
+    }
 
     // const [contacts, setContacts] = useState(data);
     const [search, setSearch] = useState('');
@@ -32,15 +50,19 @@ const TableForm = () => {
             <thead>
               <tr>
                 <th>id</th>
+                <th>isin</th>
                 <th>Cusip</th>
-                <th>Counterparty</th>
-                <th>Currency</th>
+                <th>issuerName</th>
+                <th>maturityDate</th>
                 <th>Coupon</th>
-                <th>Date</th>
+                <th>type</th>
+                <th>facevalue</th>
+                <th>Currency</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              {m_data
+              {bonds
                 .filter((item) => {
                   return search.toLowerCase() === ''
                     ? item
@@ -49,11 +71,16 @@ const TableForm = () => {
                 .map((item, index) => (
                   <tr key={index}>
                     <td>{item.id}</td>
+                    <td>{item.isin}</td>
                     <td>{item.cusip}</td>
-                    <td>{item.counterparty}</td>
-                    <td>{item.currency}</td>
+                    <td>{item.issuerName}</td>
+                    <td>{item.maturityDate}</td>
                     <td>{item.coupon}</td>
-                    <td>{item.date}</td>
+                    <td>{item.type}</td>
+                    <td>{item.faceValue}</td>
+                    <td>{item.currency}</td>
+                    <td>{item.status}</td>
+    
                   </tr>
                 ))}
             </tbody>

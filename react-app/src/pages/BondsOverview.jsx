@@ -9,23 +9,23 @@ const BondsOverview = () => {
 
   // const [contacts, setContacts] = useState(data);
   // const [search, setSearch] = useState('');
-  const [bonds,setBonds] = useState([]);
+//   const [bonds,setBonds] = useState([]);
 
-  useEffect(()=>{
-        getBondsFromAPI();}, 
-        []
-);
+//   useEffect(()=>{
+//         getBondsFromAPI();}, 
+//         []
+// );
 
-const getBondsFromAPI = ()=>{
-  getAllSecurities()
-  .then(res => {
-      setBonds(res.data);
-  })
-  .catch(err => {
-      setBonds([]);
-      console.log(err);
-  })
-}
+// const getBondsFromAPI = ()=>{
+//   getAllSecurities()
+//   .then(res => {
+//       setBonds(res.data);
+//   })
+//   .catch(err => {
+//       setBonds([]);
+//       console.log(err);
+//   })
+// }
 
   return (
       <div>   
