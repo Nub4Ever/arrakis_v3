@@ -43,13 +43,14 @@ body, html {
 
 .SidebarList.row{
   width:100%;
-  height:70px;
+  height:auto;
   /* border: 1px solid black; */
   list-style-type:none;
   margin: 0%;
   display:flex;
   flex-direction: row;
-  
+  flex-grow: 1;
+  flex-basis: 0;
   color:white;
   justify-content: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -73,8 +74,26 @@ body, html {
 }
 
 .row #title{
-  flex:70%;
-  
+  flex:70%; 
+}
+
+/*  ******************************************************************  *********************************          */
+.header-text {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #4ac9e3;
+}
+
+.calendar-container {
+  display: top;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar-content {
+  text-align: center;
+  color: white; /* Change the content color to blue (#007bff) */
 }
 /*  ******************************************************************  *********************************          */
 /* .App-logo {
@@ -118,15 +137,15 @@ body, html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid #e8e8e8;
+  /* border: 1px solid #e8e8e8; */
   padding: 3em 1em;
   /* min-width: 500px; */
   /* min-height: 300px; */
   min-width: 100%;
   min-height: 100%;
-  border-radius: 30px;
-  box-shadow: 1px 5px 2px rgba(0,0,0,.1);
-  color:#676767;
+  /* border-radius: 30px; */
+  /* box-shadow: 1px 5px 2px rgba(0,0,0,.1); */
+  /* color:#676767; */
 
   input{
       font-size: 1.2em;
