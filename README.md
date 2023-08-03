@@ -1,27 +1,23 @@
-[link](https://stackoverflow.com/questions/38041863/import-csv-in-h2-dynamically)
+# Bonds App
 
+## Prerequisites - React
 
-## Potentially useful links:
-[many-to-many rel. in springboot rest jpa](https://www.appsdeveloperblog.com/many-to-many-relationship-in-spring-boot-rest-jpa/)
+	npm install create-react-app
+	npm install react-scripts
+	npm install react-router-dom
+	npm install @mui/icons-material
+ 	npm install @mui/styled-engine
+	npm install @emotion/react
+ 	npm install @emotion/styled
+	npm install bootstrap
+	npm install firebase
+	note: potentially need to install @mui @emotion but this needs to be checked
 
-
-
-
-# arrakis_v3
-# Dogs APIs
-
-![dogs](dogs_api.jpg)
-
-In this example, we are creating crud operations and exposing them through REST APIs so that UI clients can invoke these operations. The demo operations enable the clients to modify the dogs records in database.
-
-The purpose of this demo is to showcase the nuts and bolts, which make this interaction possible, not covering the complexity in business logic involved in real world applications.
-
-
-# Let's get the back-end running!
-
+### React App Firebase Login:
+email: qiqi.zhou77@outlook.com
+password: 123123
 
 ## Prerequisites
-
 
 ### (You should already have most of this set up during training)
 
@@ -36,7 +32,7 @@ Make sure following Environment Variables are defined:
 2.Download and Install ([Maven](https://maven.apache.org/install.html))
 
    
-# Getting Started
+### Getting Started
 In this example, we’re gonna build a Spring Boot Rest CRUD API example with Maven that use Spring Data JPA to interact with MySQL/H2 database. You will know:
 
 a. How to configure Spring Data, JPA, Hibernate to work with Database
@@ -47,12 +43,12 @@ c. Way to create Spring Rest Controller to process HTTP requests
 
 d. Way to use Spring Data JPA to interact with H2/MySQL Database
 
-# Project Flow
+### Project Flow
 
 ![This is an image](Business-Service-Controller-and-Repository.jpg)
 
 
-# What is the CRUD operation?
+### What is the CRUD operation?
 The CRUD stands for Create, Read/Retrieve, Update, and Delete. These are the four basic functions of the persistence storage.
 
 The CRUD operation can be defined as user interface conventions that allow view, search, and modify information through computer-based forms and reports. CRUD is data-oriented and the standardized use of HTTP action verbs. HTTP has a few important verbs.
@@ -65,13 +61,13 @@ Standard CRUD Operation:
 
 The CRUD operations refer to all major functions that are implemented in relational database applications. Each letter of the CRUD can map to a SQL statement and HTTP methods.
 
-# Database 
+### Database 
 
 H2 is an open-source lightweight Java database. It can be embedded in Java applications or run in the client-server mode
 
 **Schema**
 
-For this example we have a table called dog. Table is automatically created when springboot application starts using following schema.sql
+Table is automatically created when springboot application starts using following schema.sql
 
 	java-api\src\main\resources\schema.sql
 
@@ -79,7 +75,7 @@ You can modify this file to add new database tables.
 
 **Data**
 
-To populate data into table dog, we have used data.sql which has insert statements.
+To populate data, we have used data.sql which has insert statements.
 
 	java-api\src\main\resources\data.sql
 
@@ -90,7 +86,7 @@ Connection details are mentioned in the application.properties
 	java-api\src\main\resources\application.properties
 
 
-# Steps to run the project on local machine
+### Steps to run the project on local machine
 
 Git clone the code to local machine
 
