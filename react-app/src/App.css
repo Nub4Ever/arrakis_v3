@@ -25,15 +25,20 @@ body, html {
 
 .Sidebar{
   /* margin: auto; */
-  height: auto;
+  height: max;
   width:250px;
   background-color: #0c2340;
+  position: absolute;
+  /* overflow: hidden; */
 }
 
 .SidebarList{
-  height: auto;
+  height: 100%;
   padding: 0;
   width:100%;
+  overflow: hidden;
+  /* margin-bottom: 5000px; /* any large number will do */
+  /*padding-bottom: -5000px;*/
 }
 
 .SidebarList.row{
