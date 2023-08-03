@@ -3,7 +3,6 @@ import Sidebar from '../components/Sidebar';
 import "../App.css";
 import TableForm from '../components/TableForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getAllSecurities } from '../service/security-service';
 
 const BondsOverview = () => {
 

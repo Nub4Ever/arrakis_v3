@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { getAllSecurities } from '../service/security-service';
+import { useEffect } from 'react';
 
 const TableForm = () => {
 
