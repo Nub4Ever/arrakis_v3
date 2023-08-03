@@ -14,7 +14,7 @@
 	note: potentially need to install @mui @emotion but this needs to be checked
 
 ### React App Firebase Login:
-email: qiqi.zhou77@outlook.com
+email: user_1@gmail.com
 password: 123123
 
 ## Prerequisites
