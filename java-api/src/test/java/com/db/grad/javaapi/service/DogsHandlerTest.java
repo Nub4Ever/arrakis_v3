@@ -208,7 +208,7 @@ public class DogsHandlerTest
 
 
     @Test
-    public  void    find_dog_by_name_returns_null_because_many_dogs_with_same_name()
+    public  void find_dog_by_name_returns_null_because_many_dogs_with_same_name()
     {
         // arrange
         Dog theDog = new Dog();
