@@ -12,6 +12,7 @@
 	npm install bootstrap
 	npm install firebase
  	npm install react-bootstrap
+  	npm install @mui/x-date-pickers
 	note: potentially need to install @mui @emotion but this needs to be checked
 
 ### React App Firebase Login:
