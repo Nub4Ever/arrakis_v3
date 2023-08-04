@@ -1,11 +1,12 @@
 package com.db.grad.javaapi.service;
 
 import com.db.grad.javaapi.model.Security;
-import com.db.grad.javaapi.model.Security;
 import com.db.grad.javaapi.repository.SecurityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,33 @@ public class SecurityService implements ISecurityService{
     @Override
     public long getNoOfSecurities() {
         return securityRepository.count();
+    }
+
+    @Override
+    public LocalDate getBondsdueMaturityNext5Days(LocalDate startDate){
+        int BusinessDays = 5;
+        LocalDate futureDate = startDate;
+
+        for (int addedDays = 0; addedDays < BusinessDays; futureDate = futureDate.plusDays(1)){
+            if (futureDate.getDayOfWeek() != DayOfWeek.SATURDAY & futureDate.getDayOfWeek() != DayOfWeek.SUNDAY) {
+                addedDays++;
+            }
+        }
+        return getBondsdueMaturityNext5Days(futureDate);
+    }
+
+    @Override
+    public LocalDate getBondsdueMaturityLast5Days(LocalDate startDate){
+        startDate = date.gettime
+        LocalDate HistoryDate = startDate;
+        int BusinessDays = 5;
+
+        for (int addedDays = 0; addedDays < BusinessDays; HistoryDate = HistoryDate.minusDays(1)){
+            if (HistoryDate.getDayOfWeek() != DayOfWeek.SATURDAY & HistoryDate.getDayOfWeek() != DayOfWeek.SUNDAY) {
+                addedDays++;
+            }
+        }
+        return getBondsdueMaturityLast5Days(HistoryDate);
     }
 
     @Override
