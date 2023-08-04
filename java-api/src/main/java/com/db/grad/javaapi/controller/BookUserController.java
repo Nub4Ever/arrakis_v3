@@ -15,14 +15,14 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins="http://localhost:3000")
 public class BookUserController {
+    @Autowired
+    private BookUserService bookUserService;
 
     @Autowired
     public BookUserController(BookUserService bookUserService) {
         this.bookUserService = bookUserService;
     }
 
-    @Autowired
-    BookUserService bookUserService;
     @Autowired
     UserService userService;
 
