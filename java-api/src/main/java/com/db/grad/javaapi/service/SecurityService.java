@@ -55,7 +55,6 @@ public class SecurityService implements ISecurityService{
 
     @Override
     public LocalDate getBondsdueMaturityLast5Days(LocalDate startDate){
-        startDate = date.gettime
         LocalDate HistoryDate = startDate;
         int BusinessDays = 5;
 
