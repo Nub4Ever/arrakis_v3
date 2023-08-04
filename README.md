@@ -11,6 +11,7 @@
  	npm install @emotion/styled
 	npm install bootstrap
 	npm install firebase
+ 	npm install react-bootstrap
 	note: potentially need to install @mui @emotion but this needs to be checked
 
 ### React App Firebase Login:
