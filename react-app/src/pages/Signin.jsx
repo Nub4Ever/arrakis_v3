@@ -26,7 +26,7 @@ function SignIn() {
     }
 
     return (
-        <div className ="App">  
+        <div className ="App">
          <div className="background-image"> 
          <div className='signIn'>
             <h1>Sign in to your account</h1>

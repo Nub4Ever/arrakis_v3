@@ -17,7 +17,7 @@ function App() {
 
     <Routes>
       <Route path="/login" element={<SignIn />} />
-      <Route path="/signup" element={SignUp} />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="*" element={<SignIn />} />
       <Route path="/overview" element={<BondsOverview />} />
       <Route path="/maturity" element={<MaturityAnalysis />} />
