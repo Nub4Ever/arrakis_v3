@@ -14,7 +14,7 @@ function SignUp() {
     createUserWithEmailAndPassword(auth, email, password)
       .then(res => {
         //do something else with the response
-        navigate("/overview");
+        navigate("/login");
       })
       .catch(err => {
         //do something with the error
