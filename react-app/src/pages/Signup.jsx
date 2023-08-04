@@ -9,6 +9,16 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [signupError, setSignupError] = useState('');
   const navigate = useNavigate();
+//  const [showMessage, setShowMessage] = useState(false);
+
+//   const showMessageTemporarily = () => {
+//       setShowMessage(true);
+//
+//       // Hide the message after 3 seconds (adjust the duration as needed)
+//       setTimeout(() => {
+//         setShowMessage(false);
+//       }, 3000);
+//     };
 
   const signUp = () => {
     createUserWithEmailAndPassword(auth, email, password)
