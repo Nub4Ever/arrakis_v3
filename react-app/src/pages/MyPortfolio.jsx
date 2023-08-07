@@ -79,7 +79,8 @@ const MyPortfolio = () => {
 
     // Filter call
     const getInforList = () => {
-        const email = "wlude3@tripod.com"; // temporarily a definite one, will change automatically later
+        //const email = "wlude3@tripod.com"; // temporarily a definite one, will change automatically later
+        const email = localStorage.getItem("userEmail");
         // const useId = filterId(usertable, "email", email, "user_id").length > 0 ? filterId(usertable, "email", email, "user_id")[0] : "";
         // const bookArr = filterId(bookuser, "user_id", useId, "book_id");
         const useId = filterId(users, "email", email, "user_id").length > 0 ? filterId(users, "email", email, "user_id")[0] : "";

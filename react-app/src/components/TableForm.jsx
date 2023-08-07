@@ -66,47 +66,54 @@ const TableForm = () => {
         {
             title: 'isin',
             dataIndex: 'isin',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.isin.localeCompare(a.isin),
         },
         {
             title: 'cusip',
             dataIndex: 'cusip',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.cusip.localeCompare(a.cusip),
         },
         {
             title: 'issuerName',
             dataIndex: 'issuerName',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.issuerName.localeCompare(a.issuerName),
         },
         {
             title: 'maturityDate',
             dataIndex: 'maturityDate',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => new Date(b.maturityDate) - new Date(a.maturityDate),
         },
         {
             title: 'coupon',
             dataIndex: 'coupon',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) =>  a.coupon - b.coupon,
         },
         {
             title: 'type',
             dataIndex: 'type',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.type.localeCompare(a.type),
+
         },
         {
             title: 'faceValue',
             dataIndex: 'faceValue',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) =>  a.faceValue - b.faceValue,
         },
         {
             title: 'currency',
             dataIndex: 'currency',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.currency.localeCompare(a.currency),
         },
         {
             title: 'status',
             dataIndex: 'status',
-            sorter: (a, b) =>  a.id.length - b.id.length,
+            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.status.localeCompare(a.status),
         },
         // {
         //     title: 'book_id',
