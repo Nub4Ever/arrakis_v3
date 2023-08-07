@@ -125,22 +125,26 @@ const MaturityAnalysis = () => {
         {
             title: 'id',
             dataIndex: 'id',
-            align: "center"
+            align: "center",
+            sorter: (a, b) => a.id - b.id,
         },
         {
             title: 'maturityDate',
             dataIndex: 'maturityDate',
-            align: "center"
+            align: "center",
+            sorter: (a, b) => new Date(b.maturityDate) - new Date(a.maturityDate),
         },
         {
             title: 'isin',
             dataIndex: 'isin',
-            align: "center"
+            align: "center",
+            sorter: (a, b) => b.isin.localeCompare(a.isin),
         },
         {
             title: 'cusip',
             dataIndex: 'cusip',
-            align: "center"
+            align: "center",
+            sorter: (a, b) => b.cusip.localeCompare(a.cusip),
         },
     ];
 
