@@ -2,30 +2,24 @@ INSERT INTO security (coupon, currency, cusip, face_value, isin, issuer_name, ma
 VALUES
     (4.37, 'USD', '', 1000, 'XS1988387210', 'BNPParibasIssu 4,37% Microsoft Corp (USD)', '2021-08-05', 'active', 'CORP', 'Trading_book_1'),
     (3.15, 'USD', '123456780', 900, 'USN0280EAR64', 'Airbus 3.15% USD', '2021-07-30', 'active', 'CORP', 'Trading_book_2'),
+    (2, 'USD', '123456bh0', 900, 'USN0280EAR64', 'UBS Facebook (USD)', '2021-09-30', 'active', 'CORP', 'Trading_book_2'),
     (2, 'USD', '123456bh0', 900, 'A12356111', 'UBS Facebook (USD)', '2021-09-30', 'active', 'CORP', 'Trading_book_3'),
-    (3.15, 'USD', 'AMZN 3.15 08/22/27 REGS', 900, 'USU02320AG12', 'Amazon', '2021-03-08', 'active', 'CORP', 'Trading_book_4'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460505', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460506', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460507', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460508', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460509', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460510', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460511', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460512', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460513', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460514', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460515', 'HM Treasury United Kingdom', '2021-09-08', 'active', 'GOVN', 'Trading_book_6'),
-    (2.02, 'USD', '87973RAA8', 690, 'US87973RAA86', 'TEMASEK FINL I LTD GLOBAL MEDIUM TERM NTS BOOK ENTRY REG S', '2021-06-08', 'active', 'SOVN', 'Trading_book_4'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460505', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460506', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460507', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460508', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460509', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460510', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460511', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460512', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460513', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460514', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (0.75, 'GBP', 'BDCHBW8', 900, 'GB00B6460515', 'HM Treasury United Kingdom', '2021-08-09', 'active', 'GOVN', 'Trading_book_6'),
+    (2.02, 'USD', '87973RAA8', 690, 'US87973RAA86', 'TEMASEK FINL I LTD GLOBAL MEDIUM TERM NTS BOOK ENTRY REG S', '2021-08-06', 'active', 'SOVN', 'Trading_book_4'),
+    (3.15, 'USD', 'AMZN 3.15 08/22/27 REGS', 900, 'USU02320AG12', 'Amazon', '2021-08-03', 'active', 'CORP', 'Trading_book_4'),
     (1.123, 'USD', '87973RAA8', 340, 'IE00B29LNP31', 'First Norway Alpha Kl.IV', '2030-12-22', 'active', 'SOVN', 'Trading_book_4');
 
-INSERT INTO book (name)
-VALUES
-    ('trading_book_1'),
-    ('trading_book_2'),
-    ('trading_book_3'),
-    ('trading_book_4'),
-    ('trading_book_5'),
-    ('trading_book_6');
+
 
 INSERT INTO counterparty (name)
 VALUES
@@ -75,14 +69,14 @@ VALUES
 
 INSERT INTO users(name, email, role)
 VALUES
-    ('Trader_1', 'trader_1@gmail.com', 'trader'),
-    ('Trader_2', 'trader_2@gmail.com', 'trader'),
-    ('Trader_3', 'trader_3@gmail.com', 'trader'),
-    ('Trader_4', 'trader_4@gmail.com', 'trader'),
-    ('Trader_5', 'trader_5@gmail.com', 'trader'),
-    ('Trader_6', 'trader_6@gmail.com', 'trader'),
-    ('Trader_7', 'trader_7@gmail.com', 'trader'),
-    ('Trader_8', 'trader_8@gmail.com', 'trader');
+    ('doFkRCnGa2e5noysqNdybbarQt53', 'trader_1@gmail.com', 'trader'),
+    ('jspWInqSo2PKW5kW5HjXzqZlZvi2', 'trader_2@gmail.com', 'trader'),
+    ('io1lIAxWqGYd3SNE0v1yWb3lb1c2', 'trader_3@gmail.com', 'trader'),
+    ('QrQWiTYlTdXFqjjbtLHcb2Mpno73', 'trader_4@gmail.com', 'trader'),
+    ('G1n7X8Rt1OS9v8sM2VjOwlg3okB3', 'trader_5@gmail.com', 'trader'),
+    ('Wpstjrmh5PaTw1VVsGBk0uf6iVM2', 'trader_6@gmail.com', 'trader'),
+    ('cUfD9pJMrAUezdT4HteMddlhome2', 'trader_7@gmail.com', 'trader'),
+    ('GLPmgjOSNggECRLszp9xAZNTXlN2', 'trader_8@gmail.com', 'trader');
 
 INSERT INTO book(name)
 VALUES
@@ -90,19 +84,20 @@ VALUES
     ('Trading_book_2'),
     ('Trading_book_3'),
     ('Trading_book_4'),
-    ('Trading_book_5'),
     ('Trading_book_6');
 
 INSERT INTO book_user(book_id, user_id)
 VALUES
-    (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5),
-    (6, 6),
-    (1, 7),
-    (2, 7),
-    (3, 7),
-    (4, 8),
-    (6, 8);
+    (1, 'doFkRCnGa2e5noysqNdybbarQt53'),
+    (6, 'doFkRCnGa2e5noysqNdybbarQt53'),
+    (2,'jspWInqSo2PKW5kW5HjXzqZlZvi2'),
+    (4,'jspWInqSo2PKW5kW5HjXzqZlZvi2'),
+    (3, 'io1lIAxWqGYd3SNE0v1yWb3lb1c2'),
+    (4, 'QrQWiTYlTdXFqjjbtLHcb2Mpno73'),
+    (6, 'QrQWiTYlTdXFqjjbtLHcb2Mpno73'),
+    (3, 'G1n7X8Rt1OS9v8sM2VjOwlg3okB3'),
+    (3, 'G1n7X8Rt1OS9v8sM2VjOwlg3okB3'),
+    (6, 'Wpstjrmh5PaTw1VVsGBk0uf6iVM2'),
+    (3, 'cUfD9pJMrAUezdT4HteMddlhome2'),
+    (2, 'cUfD9pJMrAUezdT4HteMddlhome2'),
+    (4, 'GLPmgjOSNggECRLszp9xAZNTXlN2');
