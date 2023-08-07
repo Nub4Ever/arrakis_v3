@@ -54,10 +54,10 @@ const MaturityAnalysis = () => {
         if (data.length > 0) {
             const getData = data.filter(item => {
                 const itemDiff = dayjs(val || value).diff(
-                    item.maturity_date,
+                    item.maturityDate,
                     "day"
                 );
-                return item.maturity_date && Math.abs(itemDiff)<= 5
+                return item.maturityDate && Math.abs(itemDiff)<= 5
             });
             return getData
         } else {
@@ -102,9 +102,9 @@ const MaturityAnalysis = () => {
     };
 
     const setRow = (row, index) => {
-        if (row.maturity_date) {
+        if (row.maturityDate) {
             const Diff = dayjs(value).diff(
-                row.maturity_date,
+                row.maturityDate,
                 "day"
             );
             if (Math.abs(Diff)<= 5){
@@ -128,8 +128,8 @@ const MaturityAnalysis = () => {
             align: "center"
         },
         {
-            title: 'maturity_date',
-            dataIndex: 'maturity_date',
+            title: 'maturityDate',
+            dataIndex: 'maturityDate',
             align: "center"
         },
         {
@@ -218,8 +218,8 @@ const MaturityAnalysis = () => {
 
                                 <Col span={24}>
                                     <Form.Item
-                                        label="issuer_name"
-                                        name="issuer_name"
+                                        label="issuerName"
+                                        name="issuerName"
                                     >
                                         <Input/>
                                     </Form.Item>
@@ -230,8 +230,8 @@ const MaturityAnalysis = () => {
                             <Row gutter={[16, 16]}>
                                 <Col span={24}>
                                     <Form.Item
-                                        label="maturity_date"
-                                        name="maturity_date"
+                                        label="maturityDate"
+                                        name="maturityDate"
                                     >
                                         <Input placeholder="Basic usage"/>
                                     </Form.Item>
@@ -258,8 +258,8 @@ const MaturityAnalysis = () => {
 
                                 <Col span={24}>
                                     <Form.Item
-                                        label="face_value"
-                                        name="face_value"
+                                        label="faceValue"
+                                        name="faceValue"
                                     >
                                         <Input placeholder="Basic usage"/>
                                     </Form.Item>
