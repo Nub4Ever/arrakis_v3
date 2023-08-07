@@ -84,11 +84,15 @@ const MyPortfolio = () => {
         // const useId = filterId(usertable, "email", email, "user_id").length > 0 ? filterId(usertable, "email", email, "user_id")[0] : "";
         // const bookArr = filterId(bookuser, "user_id", useId, "book_id");
         const useId = filterId(users, "email", email, "id").length > 0 ? filterId(users, "email", email, "id")[0] : "";
+        console.log(useId)
         const bookArr = filterId(bookusers, "userId", useId, "bookId");
-        console.log(bookusers[0]);
+        console.log(bookArr);
         if (bookArr.length > 0) {
-            const bookNameArr = filterObjectsByProperty(books, bookArr, "id", "bookId")
-            const list = filterObjectsByProperty(bonds, bookNameArr, "bookName", "name");
+            const bookNameArr = filterObjectsByProperty(books, bookArr, "id");
+            console.log('ola');
+            console.log(bookNameArr);
+            const list = filterObjectsByProperty(bonds, bookNameArr, "bookName",'name');
+            console.log('Olala');
             console.log(list);
             setList(list)
         } else {
@@ -157,58 +161,58 @@ const MyPortfolio = () => {
         {
             title: 'id',
             dataIndex: 'id',
-            // sorter: (a, b) => a.id - b.id,
+            sorter: (a, b) => a.id - b.id,
         },
         {
             title: 'isin',
             dataIndex: 'isin',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.isin.localeCompare(a.isin),
         },
         {
             title: 'cusip',
             dataIndex: 'cusip',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.cusip.localeCompare(a.cusip),
         },
         {
             title: 'issuerName',
             dataIndex: 'issuerName',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.issuerName.localeCompare(a.issuerName),
         },
         {
             title: 'maturityDate',
             dataIndex: 'maturityDate',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => new Date(b.maturityDate) - new Date(a.maturityDate),
         },
         {
             title: 'coupon',
             dataIndex: 'coupon',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) =>  a.coupon - b.coupon,
         },
         {
             title: 'type',
             dataIndex: 'type',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.type.localeCompare(a.type),
         },
         {
             title: 'faceValue',
             dataIndex: 'faceValue',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) =>  a.faceValue - b.faceValue,
         },
         {
             title: 'currency',
             dataIndex: 'currency',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.currency.localeCompare(a.currency),
         },
         {
             title: 'status',
             dataIndex: 'status',
-            // sorter: (a, b) =>  a.id.length - b.id.length,
+            sorter: (a, b) => b.status.localeCompare(a.status),
         },
-        // {
-        //     title: 'book_id',
-        //     dataIndex: 'book_id',
-        //     sorter: (a, b) =>  a.id.length - b.id.length,
-        // },
+        {
+            title: 'bookName',
+            dataIndex: 'bookName',
+            sorter: (a, b) =>  b.status.localeCompare(a.status),
+        },
     ];
 
     const onChange = (pagination, filters, sorter, extra) => {
