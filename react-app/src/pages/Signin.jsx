@@ -19,6 +19,7 @@ function SignIn() {
             // history.push('/main');
             //do something else with the response
             navigate("/overview");
+            localStorage.setItem("userEmail", email);              
         }).catch(err => {
             //do something with the error
             setLoginError("Ops, Wrong Password/Email, Try again");
