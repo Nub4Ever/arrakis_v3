@@ -2,8 +2,10 @@ package com.db.grad.javaapi.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
+@IdClass(BookUser.class)
 @Table(name = "book_user")
 public class BookUser implements Serializable {
     @Id
@@ -35,5 +37,18 @@ public class BookUser implements Serializable {
                 "bookId=" + bookId +
                 ", userId=" + userId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookUser bookUser = (BookUser) o;
+        return bookId == bookUser.bookId && userId == bookUser.userId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookId, userId);
     }
 }

@@ -1,10 +1,13 @@
 package com.db.grad.javaapi.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
+@IdClass(Users.class)
 @Table(name = "users")
-public class Users {
+public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -52,5 +55,18 @@ public class Users {
                 ", email='" + email + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Users users = (Users) o;
+        return id == users.id && Objects.equals(name, users.name) && Objects.equals(email, users.email) && Objects.equals(role, users.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, role);
     }
 }

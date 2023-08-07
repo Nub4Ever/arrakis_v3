@@ -3,10 +3,10 @@ import Sidebar from '../components/Sidebar';
 import {Table as AntTable} from "antd";
 import Container from "react-bootstrap/Container";
 
-import {usertable} from "../data/Mock_usertbale";
-import {bookuser} from "../data/Mock_bookuser";
-import {bookName} from "../data/Mock_book";
-import {m_data} from "../data/Mock_data";
+// import {usertable} from "../data/Mock_usertbale";
+// import {bookuser} from "../data/Mock_bookuser";
+// import {bookName} from "../data/Mock_book";
+// import {m_data} from "../data/Mock_data";
 
 import {getAllSecurities,getAllBookUsers,getAllBooks,getAllUsers} from '../service/security-service';
 
@@ -17,6 +17,10 @@ import "../App.css";
 
 const MyPortfolio = () => {
     const [list, setList] = useState([]);
+    const [bonds, setBonds] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [books, setBooks] = useState([]);
+    const [bookusers, setBookusers] = useState([]);
 
     // 
     useEffect(() => {
@@ -41,28 +45,28 @@ const MyPortfolio = () => {
         //bookusers
         getAllBookUsers()
             .then(res => {
-                setBonds(res.data);
+                setBookusers(res.data);
             })
             .catch(err => {
-                setBonds([]);
+                setBookusers([]);
                 console.log(err);
             })
 
         getAllBooks()
             .then(res => {
-                setBonds(res.data);
+                setBooks(res.data);
             })
             .catch(err => {
-                setBonds([]);
+                setBooks([]);
                 console.log(err);
             })
 
         getAllUsers()
             .then(res => {
-                setBonds(res.data);
+                setUsers(res.data);
             })
             .catch(err => {
-                setBonds([]);
+                setUsers([]);
                 console.log(err);
             })   
         

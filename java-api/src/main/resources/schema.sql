@@ -15,7 +15,7 @@ CREATE TABLE users(
     id int NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
-    role varchar(255) NOT NULL,
+    role varchar(255) DEFAULT NULL,
     PRIMARY KEY (id)
 );
 
@@ -40,12 +40,13 @@ CREATE TABLE security(
     isin varchar(50) DEFAULT NULL,
     cusip varchar(50) DEFAULT NULL,
     issuer_name varchar(255) NOT NULL,
-    maturity_date datetime NOT NULL,
+    maturity_date date NOT NULL,
     coupon float NOT NULL,
     type varchar(255) DEFAULT NULL,
     face_value float NOT NULL,
     currency varchar(10) NOT NULL,
     status varchar(50) DEFAULT NULL,
+    book_name varchar(50) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -59,8 +60,8 @@ CREATE TABLE trades(
     counterparty_id int NOT NULL ,
     currency varchar(10) NOT NULL,
     status varchar(50) DEFAULT NULL,
-    trade_date datetime NOT NULL,
-    settlement_date datetime NOT NULL,
+    trade_date date NOT NULL,
+    settlement_date date NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY(book_id) REFERENCES book(id),

@@ -22,8 +22,8 @@ public class BookUserService implements IBookUserService{
     }
 
     @Override
-    public BookUser getBookUserById(int id) {
-        return (BookUser) bookUserRepository.findBookbyUserId(id);
+    public List<BookUser> getBookUserById(int id) {
+        return bookUserRepository.findBookbyUserId(id);
     }
 
 }

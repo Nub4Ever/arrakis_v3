@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface BookUserRepository extends JpaRepository<BookUser, Integer> {
 
-    @Query(nativeQuery = true, value="select * from book_user where user_id= :id")
+    @Query(nativeQuery = true, value="select * from book_user where user_id = :id")
     List<BookUser> findBookbyUserId(int id);
 
 }
