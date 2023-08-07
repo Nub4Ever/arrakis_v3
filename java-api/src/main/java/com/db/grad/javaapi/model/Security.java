@@ -18,6 +18,7 @@ public class Security {
     private float faceValue;
     private String currency;
     private String status;
+    private String bookName;
 
     public int getId() {
         return id;
@@ -102,6 +103,15 @@ public class Security {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Column(name = "book_name")
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 
     @Override

@@ -83,11 +83,12 @@ const MyPortfolio = () => {
         const email = localStorage.getItem("userEmail");
         // const useId = filterId(usertable, "email", email, "user_id").length > 0 ? filterId(usertable, "email", email, "user_id")[0] : "";
         // const bookArr = filterId(bookuser, "user_id", useId, "book_id");
-        const useId = filterId(users, "email", email, "user_id").length > 0 ? filterId(users, "email", email, "user_id")[0] : "";
-        const bookArr = filterId(bookusers, "user_id", useId, "book_id");
+        const useId = filterId(users, "email", email, "id").length > 0 ? filterId(users, "email", email, "id")[0] : "";
+        const bookArr = filterId(bookusers, "userId", useId, "bookId");
+        console.log(bookusers[0]);
         if (bookArr.length > 0) {
-            const bookNameArr = filterObjectsByProperty(books, bookArr, "book_id")
-            const list = filterObjectsByProperty(bonds, bookNameArr, "book_name", "book_name");
+            const bookNameArr = filterObjectsByProperty(books, bookArr, "id", "bookId")
+            const list = filterObjectsByProperty(bonds, bookNameArr, "bookName", "name");
             console.log(list);
             setList(list)
         } else {
