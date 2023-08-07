@@ -7,15 +7,17 @@ function Sidebar() {
   return (
 
     <div className='Sidebar'>
-        <div className = "SidebarList"> 
+        <div className = "SidebarList">
         <ul className = "SidebarList">
         {SidebarObj.map((val,key) => {
             return (
-                <li key = {key} 
+                <div className ='SidebarList.row'>
+                 <li
+                key = {key}
                 className='row'
                 id = {window.location.pathname === val.link ? "active" : ""}
                 onClick={()=> {window.location.pathname = val.link}}>
-          
+
                 <div id='icon'>
                     {val.icon}
                 </div>
@@ -23,10 +25,12 @@ function Sidebar() {
                     {val.title}
                 </div>
                 </li>
-            );
-        })};
-        </ul></div>
-       
+                </div>
+            )
+        })}
+        </ul>
+        </div>
+
         </div>
   );
 }
