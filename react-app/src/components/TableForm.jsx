@@ -139,76 +139,17 @@ const TableForm = () => {
         setShow(false);
     };
     return (
-        <div>
+        <div style={{ maxWidth: '150vh', maxHeight: '100vh', overflow: 'auto' }}>
             <Container>
                 <h1 className={'h1Margin text-center mt-4'}>Bonds Overview</h1>
-                <Form style={{display: "none"}}>
-                    <InputGroup className='my-3'>
 
-                        {/* onChange for search */}
-                        <Form.Control
-                            onChange={(e) => setSearch(e.target.value)}
-                            placeholder='Search Bonds'
-                        />
-
-                    </InputGroup>
-                </Form>
-
-                <Table striped bordered hover style={{display: "none"}}>
-                    <thead>
-                    <tr>
-                        <th data-sortable="true">id</th>
-                        <th>Isin</th>
-                        <th>Cusip</th>
-                        <th>Issuer Name</th>
-                        <th>maturityDate</th>
-                        <th>Coupon</th>
-                        <th>Type</th>
-                        <th>Facevalue</th>
-                        <th>Currency</th>
-                        <th>Status</th>
-                        {/* <th>Book_id</th> */}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {bonds
-                        .filter((item) => {
-                            return search.toLowerCase() === ''
-                                ? item
-                                : item.cusip.toLowerCase().includes(search);
-                        })
-                        .map((item, index) => (
-                            <tr key={index}>
-                                <td>{item.id}</td>
-                                <td>{item.isin}</td>
-                                <td>{item.cusip}</td>
-                                <td>{item.issuerName}</td>
-                                <td>{item.maturityDate}</td>
-                                <td>{item.coupon}</td>
-                                <td>{item.type}</td>
-                                <td>{item.faceValue}</td>
-                                <td>{item.currency}</td>
-                                <td>{item.status}</td>
-                                {/* <td>{item.book_id}</td> */}
-
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
-
-                <AntForm
-                    name="basic"
-                    className="query"
-                    onFinish={onFinish}
-                    {...formItemLayout}
-                >
+              
+ 
+                <AntForm name="basic" className="query" onFinish={onFinish} {...formItemLayout}>
                     <Row gutter={[16,16]}>
 
                         <Col span={8}>
-                            <AntForm.Item
-                                label="id"
-                                name="id"
-                            >
+                            <AntForm.Item label="id" name="id">
                                 <Input />
                             </AntForm.Item>
                         </Col>
@@ -218,7 +159,7 @@ const TableForm = () => {
                                 label="isin"
                                 name="isin"
                             >
-                                <Input placeholder="Basic usage" />
+                                <Input />
                             </AntForm.Item>
                         </Col>
 
@@ -227,7 +168,7 @@ const TableForm = () => {
                                 label="cusip"
                                 name="cusip"
                             >
-                                <Input placeholder="Basic usage" />
+                                <Input/>
                             </AntForm.Item>
                         </Col>
 
@@ -242,29 +183,7 @@ const TableForm = () => {
                                 <Input />
                             </AntForm.Item>
                         </Col>
-
-                        <Col span={8}>
-                            <AntForm.Item
-                                label="maturityDate"
-                                name="maturityDate"
-                            >
-                                <Input placeholder="Basic usage" />
-                            </AntForm.Item>
-                        </Col>
-
-                        <Col span={8}>
-                            <AntForm.Item
-                                label="coupon"
-                                name="coupon"
-                            >
-                                <Input placeholder="Basic usage" />
-                            </AntForm.Item>
-                        </Col>
-
-                    </Row>
-
-                    <Row gutter={[16,16]}>
-
+                        
                         <Col span={8}>
                             <AntForm.Item
                                 label="type"
@@ -276,21 +195,14 @@ const TableForm = () => {
 
                         <Col span={8}>
                             <AntForm.Item
-                                label="faceValue"
-                                name="faceValue"
+                                label="bookName"
+                                name="bookName"
                             >
-                                <Input placeholder="Basic usage" />
+                                <Input />
                             </AntForm.Item>
                         </Col>
 
-                        <Col span={8}>
-                            <AntForm.Item
-                                label="currency"
-                                name="currency"
-                            >
-                                <Input placeholder="Basic usage" />
-                            </AntForm.Item>
-                        </Col>
+
 
                     </Row>
 
@@ -305,37 +217,58 @@ const TableForm = () => {
                             </AntForm.Item>
                         </Col>
 
-                        {/* <Col span={8}>
+                        <Col span={8}>
                             <AntForm.Item
-                                label="book_id"
-                                name="book_id"
+                                label="currency"
+                                name="currency"
                             >
                                 <Input />
                             </AntForm.Item>
-                        </Col> */}
+                        </Col>
+
+                        <Col span={8}>
+                            <Form >
+                                <InputGroup >
+
+                                    {/* onChange for search */}
+                                    <Form.Control
+                                        onChange={(e) => setSearch(e.target.value)}
+                                        placeholder='Global-Search'
+                                        // style={{ fontSize: '14px', height: '40px', borderRadius: '4px' }}
+                                    />
+
+                                </InputGroup>
+                            </Form>
+                        </Col>
+
+                        </Row>
 
                         <Col span={16} className='formBtn'>
-                            <Button type="primary" htmlType="submit">Search</Button>
+                            <Button type="primary" htmlType="submit">
+                                Search
+                            </Button>
                         </Col>
-                    </Row>
-
                 </AntForm>
-
+                
+            
                 {/*bonds ||*/}
-                <AntTable columns={columns} pagination={false}  dataSource={bonds} onChange={onChange}   onRow={(record) => {
-                    return {
-                        onClick: (event) => {
-                            console.log("12", record)
-                            setShow(true);
-                            setFormInfor(record)
-                        }, // 点击行
-                    };
-                }} />
+                 
+                <AntTable columns={columns} 
+                          pagination={false}  
+                          dataSource={bonds}
+                          onChange={onChange}   
+                          onRow={(record) => {
+                                    return {
+                                            onClick: (event) => {
+                                            console.log("12", record)
+                                            setShow(true);
+                                            console.log("show", record)
+                                            setFormInfor(record)}, // 点击行
+                                          };}} />
+       
 
                 <Modal title="Basic Infor" open={show} onOk={handleOk} onCancel={handleCancel}>
-                    <AntForm
-                        name="basic"
-                        onFinish={onFinish}
+                    <AntForm name="basic" onFinish={onFinish}
                         {...formItemEditLayout}
                         initialValues={{
                             ...formInfor
@@ -442,6 +375,7 @@ const TableForm = () => {
                         </Row>
                     </AntForm>
                 </Modal>
+                
             </Container>
 
         </div>
