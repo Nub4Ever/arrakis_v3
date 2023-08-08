@@ -14,6 +14,7 @@ import "../App.css";
 const TableForm = () => {
 
     const [bonds, setBonds] = useState([]);
+    const [originalBonds, setOriginalBonds] = useState([]);
     const [show, setShow] = useState(false);
     const [formInfor, setFormInfor] = useState({});
 
@@ -28,13 +29,15 @@ const TableForm = () => {
         getAllSecurities()
             .then(res => {
                 setBonds(res.data);
+                setOriginalBonds(res.data);
             })
             .catch(err => {
                 setBonds([]);
+                setOriginalBonds([]);
                 console.log(err);
-            })
+            });
     };
-
+    
 
     const formItemLayout = {
         labelCol: {
@@ -124,12 +127,41 @@ const TableForm = () => {
 
     // const [contacts, setContacts] = useState(data);
     const [search, setSearch] = useState('');
+
     const onChange = (pagination, filters, sorter, extra) => {
         console.log('params', pagination, filters, sorter, extra);
+        if (search) {
+            const filteredBonds = bonds.filter(bond =>
+                Object.values(bond).some(value =>
+                    value.toString().toLowerCase().includes(search.toLowerCase())
+                )
+            );
+            setBonds(filteredBonds);
+        } else {
+            getBondsFromAPI();
+        }
     };
-    const onFinish = (value) =>{
-        console.log(value);
+
+    
+    const onFinish = (values) => {
+        const searchColumns = ["id", "isin", "cusip", "issuerName", "type", "bookName", "status", "currency"];
+        let filteredBonds = originalBonds;
+    
+        searchColumns.forEach(column => {
+            if (values[column]) {
+                filteredBonds = filteredBonds.filter(bond =>
+                    bond[column]
+                        .toString()
+                        .toLowerCase()
+                        .includes(values[column].toLowerCase())
+                );
+            }
+        });
+    
+        setBonds(filteredBonds);
     };
+    
+    
     const handleOk = () => {
         setFormInfor({});
         setShow(false);
@@ -227,16 +259,12 @@ const TableForm = () => {
                         </Col>
 
                         <Col span={8}>
-                            <Form >
-                                <InputGroup >
-
-                                    {/* onChange for search */}
+                            <Form>
+                                <InputGroup>
                                     <Form.Control
                                         onChange={(e) => setSearch(e.target.value)}
                                         placeholder='Global-Search'
-                                        // style={{ fontSize: '14px', height: '40px', borderRadius: '4px' }}
                                     />
-
                                 </InputGroup>
                             </Form>
                         </Col>
@@ -253,128 +281,88 @@ const TableForm = () => {
             
                 {/*bonds ||*/}
                  
-                <AntTable columns={columns} 
-                          pagination={false}  
-                          dataSource={bonds}
-                          onChange={onChange}   
-                          onRow={(record) => {
-                                    return {
-                                            onClick: (event) => {
-                                            console.log("12", record)
-                                            setShow(true);
-                                            console.log("show", record)
-                                            setFormInfor(record)}, // 点击行
-                                          };}} />
+                <AntTable
+                    columns={columns}
+                    pagination={false}
+                    dataSource={bonds}
+                    onChange={onChange}
+                    onRow={(record) => {
+                        return {
+                            onClick: (event) => {
+                                console.log("Clicked record:", record);
+                                setShow(true);
+                                setFormInfor(record);
+                            },
+                        };
+                    }}
+                    rowKey="id"
+                />
+
+
        
 
-                <Modal title="Basic Infor" open={show} onOk={handleOk} onCancel={handleCancel}>
-                    <AntForm name="basic" onFinish={onFinish}
+                <Modal title="Basic Info" visible={show} onOk={handleOk} onCancel={handleCancel}>
+                    <AntForm
+                        name="basic"
                         {...formItemEditLayout}
-                        initialValues={{
-                            ...formInfor
-                        }}
+                        initialValues={formInfor}
                     >
-                        <Row gutter={[16,16]}>
+                        <Row gutter={[16, 16]}>
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="id"
-                                    name="id"
-                                >
-                                    <Input />
+                                <AntForm.Item label="id" name="id">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="isin"
-                                    name="isin"
-                                >
-                                    <Input placeholder="Basic usage" />
-                                </AntForm.Item>
-                            </Col>
-                        </Row>
-                        <Row gutter={[16,16]}>
-                            <Col span={24}>
-                                <AntForm.Item
-                                    label="cusip"
-                                    name="cusip"
-                                >
-                                    <Input placeholder="Basic usage" />
+                                <AntForm.Item label="isin" name="isin">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="issuerName"
-                                    name="issuerName"
-                                >
-                                    <Input />
-                                </AntForm.Item>
-                            </Col>
-                        </Row>
-                        <Row gutter={[16,16]}>
-                            <Col span={24}>
-                                <AntForm.Item
-                                    label="maturityDate"
-                                    name="maturityDate"
-                                >
-                                    <Input placeholder="Basic usage" />
+                                <AntForm.Item label="cusip" name="cusip">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="coupon"
-                                    name="coupon"
-                                >
-                                    <Input placeholder="Basic usage" />
-                                </AntForm.Item>
-                            </Col>
-                        </Row>
-                        <Row gutter={[16,16]}>
-                            <Col span={24}>
-                                <AntForm.Item
-                                    label="type"
-                                    name="type"
-                                >
-                                    <Input />
+                                <AntForm.Item label="issuerName" name="issuerName">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="faceValue"
-                                    name="faceValue"
-                                >
-                                    <Input placeholder="Basic usage" />
+                                <AntForm.Item label="maturityDate" name="maturityDate">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="currency"
-                                    name="currency"
-                                >
-                                    <Input placeholder="Basic usage" />
+                                <AntForm.Item label="coupon" name="coupon">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
-
                             <Col span={24}>
-                                <AntForm.Item
-                                    label="status"
-                                    name="status"
-                                >
-                                    <Input />
+                                <AntForm.Item label="type" name="type">
+                                    <Input readOnly />
                                 </AntForm.Item>
                             </Col>
-
-                            {/* <Col span={24}>
-                                <AntForm.Item
-                                    label="book_id"
-                                    name="book_id"
-                                >
-                                    <Input />
+                            <Col span={24}>
+                                <AntForm.Item label="faceValue" name="faceValue">
+                                    <Input readOnly />
                                 </AntForm.Item>
-                            </Col> */}
-
+                            </Col>
+                            <Col span={24}>
+                                <AntForm.Item label="currency" name="currency">
+                                    <Input readOnly />
+                                </AntForm.Item>
+                            </Col>
+                            <Col span={24}>
+                                <AntForm.Item label="status" name="status">
+                                    <Input readOnly />
+                                </AntForm.Item>
+                            </Col>
                         </Row>
                     </AntForm>
                 </Modal>
+
+
                 
             </Container>
 

@@ -31,8 +31,8 @@ CREATE TABLE book_user(
 
     PRIMARY KEY (book_id,user_id),
 
-    FOREIGN KEY(book_id) REFERENCES book (id),
-    FOREIGN KEY(user_id) REFERENCES users (id)
+    FOREIGN KEY(book_id) REFERENCES book(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 CREATE TABLE security(

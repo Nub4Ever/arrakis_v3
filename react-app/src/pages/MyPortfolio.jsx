@@ -84,7 +84,7 @@ const MyPortfolio = () => {
         // const useId = filterId(usertable, "email", email, "user_id").length > 0 ? filterId(usertable, "email", email, "user_id")[0] : "";
         // const bookArr = filterId(bookuser, "user_id", useId, "book_id");
         const useId = filterId(users, "email", email, "id").length > 0 ? filterId(users, "email", email, "id")[0] : "";
-        console.log(useId)
+        console.log(useId);
         const bookArr = filterId(bookusers, "userId", useId, "bookId");
         console.log(bookArr);
         if (bookArr.length > 0) {
@@ -134,7 +134,7 @@ const MyPortfolio = () => {
 
     useEffect(() => {
         getInforList();
-    }, []);
+    });
 
     // const formItemLayout = {
     //         labelCol: {

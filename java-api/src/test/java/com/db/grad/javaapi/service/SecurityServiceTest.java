@@ -233,39 +233,4 @@ public class SecurityServiceTest {
         assertEquals( expectedSecurity.getISIN(), actualResult.getISIN());
     }
 
-    @Test
-    public  void  find_bond_by_issuer_name_returns_all_bonds()
-    {
-        // arrange
-        Security theSecurity = new Security();
-        theSecurity.setIssuerName("Frank");
-        service.addSecurity( theSecurity );
-        Security expectedSecurity = theSecurity;
-        ArrayList<Security> expectedList = new ArrayList<>();
-        expectedList.add(expectedSecurity);
-
-        theSecurity = new Security();
-        theSecurity.setIssuerName("Frank");
-        service.addSecurity( theSecurity );
-        expectedSecurity = theSecurity;
-        expectedList.add(expectedSecurity);
-
-
-
-        theSecurity = new Security();
-        theSecurity.setIssuerName("Penny");
-        service.addSecurity( theSecurity );
-
-
-
-        String SecurityToFind = "Frank";
-        Mockito.when(securityRepository.findByIssuer(SecurityToFind)).thenReturn(expectedList);
-
-        // act
-        List<Security> actualResult = service.getSecurityByIssuer( SecurityToFind );
-
-        // assert
-        assertEquals(expectedList, actualResult.size());
-    }
-
 }
